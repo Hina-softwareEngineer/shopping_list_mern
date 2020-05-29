@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // const bodyParser = require("body-parser");
 const path = require('path');
 const config = require('config');
-// const enforce = require('express-sslify');
+const enforce = require('express-sslify');
 
 const app = express();
 
@@ -13,7 +13,7 @@ const app = express();
 // app.use(bodyParser.urlencoded({ extended : true }))
 
 app.use(express.json())
-// app.use(enforce.HTTPS({ trustProtoHeader: true }));
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 
 // DB config
